@@ -1,0 +1,55 @@
+.Mprojects {
+    width: 100%;
+}
+.projects{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    gap: 100px;
+    justify-content: center;
+}
+.pr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translate(0, 50px);
+    /* opacity: 0; */
+    transition: none;
+}
+.prT{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.401);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: 0.25s;
+}
+.pr1{
+    background-image: url('../../static/web/dt.png');
+}
+.pr2{
+    background-image: url('../../static/web/ms.jpg');
+}
+.prT:hover{
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+._active4 {
+    /* transition: 0.8s ease 0.75s; */
+    transition: 1.5s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+._active5 {
+    /* transition: 0.8s ease 0.75s; */
+    transition: 1.5s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
