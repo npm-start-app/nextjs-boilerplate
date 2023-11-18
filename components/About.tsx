@@ -1,9 +1,57 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '@/styles/About_style/About.module.css'
 
+const mainAnimLogic = () => {
+    const animItems = document.getElementsByClassName(styles._anim)
+
+    if (animItems.length > 0) {
+        const animOnScroll = () => {
+            for (let index = 0; index < animItems.length; index++) {
+                const animItem: any = animItems[index]
+                const animItemHeight = animItem.offsetHeight
+                const animItemoffset = offset(animItem).top
+                const animStart = 4
+
+                let animItemPoint = window.innerHeight - animItemHeight / animStart
+                if (animItemHeight > window.innerHeight) {
+                    animItemPoint = window.innerHeight - window.innerHeight / animStart
+                }
+
+                if ((pageYOffset + 100 > animItemoffset - animItemPoint) && pageYOffset < (animItemoffset + animItemHeight)) {
+                    animItem.classList.add(styles["_active" + index])
+                } else {
+                    animItem.classList.remove(styles["_active" + index])
+                }
+            }
+        }
+        const offset = (el: any) => {
+            const rect = el.getBoundingClientRect(),
+                scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop
+            return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+        }
+        animOnScroll()
+    }
+}
+
+const AboutAnimation = () => {
+    mainAnimLogic()
+    window.addEventListener("scroll", mainAnimLogic)
+}
+
 const About = () => {
+
+    let a = true
+
+    useEffect(() => {
+        if (a) {
+            a = false
+            AboutAnimation()
+        }
+    }, [])
+
     return (
-        <div className={styles.about}>
+        <div id="about" className={styles.about}>
             <div className={styles.subAbout}>
                 <div className={styles.ImgName}>
                     <img className={`${styles.avatar} ${styles._anim}`} src="./static/web/ll1.jpg" />

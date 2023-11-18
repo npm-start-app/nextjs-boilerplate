@@ -9,9 +9,9 @@ const index = () => {
   return (
     <div>
       <Header />
-      <NavBarElement />
+      <NavBarElement index={1} image={'./static/web/pAbout.png'} scrollYParam={300}/>
       <About />
-      <NavBarElement />
+      <NavBarElement index={2} image={'./static/web/pProjects.png'} scrollYParam={2400}/>
       <Projects />
       <Footer />
     </div>
