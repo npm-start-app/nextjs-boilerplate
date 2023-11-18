@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styles from '@/styles/header_style/Header.module.css'
+import styles from '@/styles/Header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
 const parallaxEffect = () => {
