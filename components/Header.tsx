@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styles from '@/styles/Header_style/Header.module.css'
+import styles from '@/styles/header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
 const parallaxEffect = () => {
@@ -12,18 +12,9 @@ const parallaxEffect = () => {
     let positionX = 0, positionY = 0
     let coordXprocent = 0, coordYprocent = 0
 
-    window.addEventListener("mousemove", (e) => {
+    const setMouseParallaxStyle = () => {
         if (window.innerWidth > 1000) {
-            if (window.scrollY <= 800) {
-                const parallaxWidth = img.offsetWidth
-                const parallaxHeight = img.offsetHeight
-
-                const coordX = e.pageX - parallaxWidth / 2
-                const coordY = e.pageY - parallaxHeight / 2
-
-                coordXprocent = coordX / parallaxWidth * 100
-                coordYprocent = coordY / parallaxHeight * 100
-
+            if (scrollY <= 800) {
                 const distX = coordXprocent - positionX
                 const distY = coordYprocent - positionY
 
@@ -33,14 +24,36 @@ const parallaxEffect = () => {
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
+
+        requestAnimationFrame(setMouseParallaxStyle)
+    }
+    setMouseParallaxStyle()
+
+    window.addEventListener("mousemove", function (e) {
+        if (this.window.innerWidth > 1000) {
+            if (this.scrollY <= 800) {
+                const parallaxWidth = img.offsetWidth
+                const parallaxHeight = img.offsetHeight
+
+                const coordX = e.pageX - parallaxWidth / 2
+                const coordY = e.pageY - parallaxHeight / 2
+
+                coordXprocent = coordX / parallaxWidth * 100
+                coordYprocent = coordY / parallaxHeight * 100
+            }
+        }
     })
 }
 
 const Header = () => {
 
+    let a = true
 
     useEffect(() => {
-        parallaxEffect()
+        if (a) {
+            a = false
+            parallaxEffect()
+        }
     }, [])
 
     const { push } = useRouter()
