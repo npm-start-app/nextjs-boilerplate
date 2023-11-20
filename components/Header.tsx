@@ -12,24 +12,9 @@ const parallaxEffect = () => {
     let positionX = 0, positionY = 0
     let coordXprocent = 0, coordYprocent = 0
 
-    // const setMouseParallaxStyle = () => {
-    //     if (window.innerWidth > 1000) {
-    //         if (scrollY <= 800) {
-    //             const distX = coordXprocent - positionX
-    //             const distY = coordYprocent - positionY
-
-    //             positionX = positionX + (distX * speed)
-    //             positionY = positionY + (distY * speed)
-
-    //             img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
-    //         }
-    //     }
-    // }
-    // setMouseParallaxStyle()
-
-    window.addEventListener("mousemove", function (e) {
-        if (this.window.innerWidth > 1000) {
-            if (this.scrollY <= 800) {
+    window.addEventListener("mousemove", (e) => {
+        if (window.innerWidth > 1000) {
+            if (window.scrollY <= 800) {
                 const parallaxWidth = img.offsetWidth
                 const parallaxHeight = img.offsetHeight
 
