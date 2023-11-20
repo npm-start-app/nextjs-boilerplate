@@ -47,13 +47,9 @@ const parallaxEffect = () => {
 
 const Header = () => {
 
-    let a = true
 
     useEffect(() => {
-        if (a) {
-            a = false
-            parallaxEffect()
-        }
+        parallaxEffect()
     }, [])
 
     const { push } = useRouter()
