@@ -12,22 +12,20 @@ const parallaxEffect = () => {
     let positionX = 0, positionY = 0
     let coordXprocent = 0, coordYprocent = 0
 
-    const setMouseParallaxStyle = () => {
-        if (window.innerWidth > 1000) {
-            if (scrollY <= 800) {
-                const distX = coordXprocent - positionX
-                const distY = coordYprocent - positionY
+    // const setMouseParallaxStyle = () => {
+    //     if (window.innerWidth > 1000) {
+    //         if (scrollY <= 800) {
+    //             const distX = coordXprocent - positionX
+    //             const distY = coordYprocent - positionY
 
-                positionX = positionX + (distX * speed)
-                positionY = positionY + (distY * speed)
+    //             positionX = positionX + (distX * speed)
+    //             positionY = positionY + (distY * speed)
 
-                img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
-            }
-        }
-
-        requestAnimationFrame(setMouseParallaxStyle)
-    }
-    setMouseParallaxStyle()
+    //             img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
+    //         }
+    //     }
+    // }
+    // setMouseParallaxStyle()
 
     window.addEventListener("mousemove", function (e) {
         if (this.window.innerWidth > 1000) {
@@ -40,6 +38,14 @@ const parallaxEffect = () => {
 
                 coordXprocent = coordX / parallaxWidth * 100
                 coordYprocent = coordY / parallaxHeight * 100
+
+                const distX = coordXprocent - positionX
+                const distY = coordYprocent - positionY
+
+                positionX = positionX + (distX * speed)
+                positionY = positionY + (distY * speed)
+
+                img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
     })
