@@ -32,19 +32,35 @@ const parallaxEffect = (ref: any) => {
     }
     setMouseParallaxStyle()
 
-    window.addEventListener("mousemove", function (e) {
+    // window.addEventListener("mousemove", function (e) {
+    //     if (window.innerWidth > 1000) {
+    //         if (window.scrollY <= 800) {
+    //             const parallaxWidth = img.offsetWidth
+    //             const parallaxHeight = img.offsetHeight
+
+    //             const coordX = e.pageX - parallaxWidth / 2
+    //             const coordY = e.pageY - parallaxHeight / 2
+
+    //             coordXprocent = coordX / parallaxWidth * 100
+    //             coordYprocent = coordY / parallaxHeight * 100
+
+    //             console.log(parallaxWidth, coordX, coordXprocent)
+    //         }
+    //     }
+    // })
+    window.addEventListener("mousemove", (e) => {
         if (window.innerWidth > 1000) {
             if (window.scrollY <= 800) {
-                const parallaxWidth = img.offsetWidth
-                const parallaxHeight = img.offsetHeight
+                if (img.offsetWidth != 0 && img.offsetHeight != 0) {
+                    const parallaxWidth = img.offsetWidth
+                    const parallaxHeight = img.offsetHeight
 
-                const coordX = e.pageX - parallaxWidth / 2
-                const coordY = e.pageY - parallaxHeight / 2
+                    const coordX = e.pageX - parallaxWidth / 2
+                    const coordY = e.pageY - parallaxHeight / 2
 
-                coordXprocent = coordX / parallaxWidth * 100
-                coordYprocent = coordY / parallaxHeight * 100
-
-                console.log(parallaxWidth, coordX, coordXprocent)
+                    coordXprocent = coordX / parallaxWidth * 100
+                    coordYprocent = coordY / parallaxHeight * 100
+                }
             }
         }
     })
