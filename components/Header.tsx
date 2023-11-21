@@ -32,7 +32,7 @@ const parallaxEffect = () => {
     window.addEventListener("mousemove", function (e) {
         console.log("ulala")
         if (window.innerWidth > 1000) {
-            console.log("ohoho)
+            console.log("ohoho")
             if (window.scrollY <= 800) {
                 console.log("ahahhaha")
                 const parallaxWidth = img.offsetWidth
