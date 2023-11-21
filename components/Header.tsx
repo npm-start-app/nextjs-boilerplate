@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import styles from '@/styles/Header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
-const parallaxEffect = () => {
-    const img: any = document.getElementById("gg")
+const parallaxEffect = (ref: any) => {
+    const img: any = ref.current
 
     const particles = -20
 
@@ -56,7 +56,7 @@ const Header = () => {
     useEffect(() => {
         if (a) {
             a = false
-            parallaxEffect()
+            parallaxEffect(ref)
         }
     }, [])
 
