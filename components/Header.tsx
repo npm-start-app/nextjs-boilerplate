@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import styles from '@/styles/Header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
@@ -14,16 +14,13 @@ const parallaxEffect = (ref: any) => {
 
     const setMouseParallaxStyle = () => {
         if (window.innerWidth > 1000) {
-            if (scrollY <= 800) {
+            if (window.scrollY <= 800) {
                 const distX = coordXprocent - positionX
                 const distY = coordYprocent - positionY
 
                 positionX = positionX + (distX * speed)
                 positionY = positionY + (distY * speed)
 
-                // console.log(positionX, distX, speed, coordXprocent)
-                // console.log(`transform: translate(${positionX / particles}%, ${positionY / particles}%);`)
-                // console.log(img, img.style, img.style.cssText)
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
@@ -32,22 +29,6 @@ const parallaxEffect = (ref: any) => {
     }
     setMouseParallaxStyle()
 
-    // window.addEventListener("mousemove", function (e) {
-    //     if (window.innerWidth > 1000) {
-    //         if (window.scrollY <= 800) {
-    //             const parallaxWidth = img.offsetWidth
-    //             const parallaxHeight = img.offsetHeight
-
-    //             const coordX = e.pageX - parallaxWidth / 2
-    //             const coordY = e.pageY - parallaxHeight / 2
-
-    //             coordXprocent = coordX / parallaxWidth * 100
-    //             coordYprocent = coordY / parallaxHeight * 100
-
-    //             console.log(parallaxWidth, coordX, coordXprocent)
-    //         }
-    //     }
-    // })
     window.addEventListener("mousemove", (e) => {
         if (window.innerWidth > 1000) {
             if (window.scrollY <= 800) {
@@ -67,17 +48,11 @@ const parallaxEffect = (ref: any) => {
 }
 
 const Header = () => {
-
-    let a = true
-
     const ref = useRef(null)
     
-    useLayoutEffect(() => {
-        if (a) {
-            a = false
-            parallaxEffect(ref)
-        }
-    }, [])
+    if (typeof window !== "undefined") {
+        parallaxEffect(ref)
+    }
 
     const { push } = useRouter()
 
