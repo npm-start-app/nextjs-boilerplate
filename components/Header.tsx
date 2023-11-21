@@ -30,8 +30,11 @@ const parallaxEffect = () => {
     setMouseParallaxStyle()
 
     window.addEventListener("mousemove", function (e) {
-        if (this.window.innerWidth > 1000) {
-            if (this.scrollY <= 800) {
+        console.log("ulala")
+        if (window.innerWidth > 1000) {
+            console.log("ohoho)
+            if (window.scrollY <= 800) {
+                console.log("ahahhaha")
                 const parallaxWidth = img.offsetWidth
                 const parallaxHeight = img.offsetHeight
 
