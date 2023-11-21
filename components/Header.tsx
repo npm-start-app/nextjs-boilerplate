@@ -21,8 +21,9 @@ const parallaxEffect = (ref: any) => {
                 positionX = positionX + (distX * speed)
                 positionY = positionY + (distY * speed)
 
-                console.log(`transform: translate(${positionX / particles}%, ${positionY / particles}%);`)
-                console.log(img, img.style, img.style.cssText)
+                console.log(positionX, distX, speed, coordXprocent)
+                // console.log(`transform: translate(${positionX / particles}%, ${positionY / particles}%);`)
+                // console.log(img, img.style, img.style.cssText)
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
@@ -36,7 +37,6 @@ const parallaxEffect = (ref: any) => {
             if (window.scrollY <= 800) {
                 const parallaxWidth = img.offsetWidth
                 const parallaxHeight = img.offsetHeight
-                console.log(parallaxWidth, parallaxHeight)
 
                 const coordX = e.pageX - parallaxWidth / 2
                 const coordY = e.pageY - parallaxHeight / 2
