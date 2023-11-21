@@ -21,7 +21,7 @@ const parallaxEffect = (ref: any) => {
                 positionX = positionX + (distX * speed)
                 positionY = positionY + (distY * speed)
 
-                console.log(positionX, distX, speed, coordXprocent)
+                // console.log(positionX, distX, speed, coordXprocent)
                 // console.log(`transform: translate(${positionX / particles}%, ${positionY / particles}%);`)
                 // console.log(img, img.style, img.style.cssText)
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
@@ -43,6 +43,8 @@ const parallaxEffect = (ref: any) => {
 
                 coordXprocent = coordX / parallaxWidth * 100
                 coordYprocent = coordY / parallaxHeight * 100
+
+                console.log(parallaxWidth, coordX, coordXprocent)
             }
         }
     })
