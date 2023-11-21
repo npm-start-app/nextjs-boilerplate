@@ -50,8 +50,9 @@ const parallaxEffect = (ref: any) => {
 const Header = () => {
     const ref = useRef(null)
     
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && ref !== null) {
         parallaxEffect(ref)
+        console.log(true)
     }
 
     const { push } = useRouter()
