@@ -15,14 +15,12 @@ const parallaxEffect = (ref: any) => {
     const setMouseParallaxStyle = () => {
         if (window.innerWidth > 1000) {
             if (scrollY <= 800) {
-                console.log("ulala")
                 const distX = coordXprocent - positionX
                 const distY = coordYprocent - positionY
 
                 positionX = positionX + (distX * speed)
                 positionY = positionY + (distY * speed)
 
-                console.log(img)
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
