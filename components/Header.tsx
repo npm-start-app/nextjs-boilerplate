@@ -36,6 +36,7 @@ const parallaxEffect = (ref: any) => {
             if (window.scrollY <= 800) {
                 const parallaxWidth = img.offsetWidth
                 const parallaxHeight = img.offsetHeight
+                console.log(parallaxWidth, parallaxHeight)
 
                 const coordX = e.pageX - parallaxWidth / 2
                 const coordY = e.pageY - parallaxHeight / 2
