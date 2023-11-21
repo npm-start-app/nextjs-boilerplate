@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import styles from '@/styles/Header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
@@ -51,7 +51,7 @@ const Header = () => {
 
     const ref = useRef(null)
     
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (a) {
             a = false
             parallaxEffect(ref)
