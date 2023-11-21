@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from '@/styles/Header_style/Header.module.css'
 import { useRouter } from 'next/navigation'
 
@@ -49,18 +49,16 @@ const parallaxEffect = () => {
 
 const Header = () => {
 
-    // let a = true
+    let a = true
 
-    // useEffect(() => {
-    //     if (a) {
-    //         a = false
-    //         parallaxEffect()
-    //     }
-    // }, [])
-
-    if (typeof window !== "undefined" && typeof document !== "undefined") {
-        parallaxEffect()
-    }
+    const ref = useRef(null)
+    
+    useEffect(() => {
+        if (a) {
+            a = false
+            parallaxEffect()
+        }
+    }, [])
 
     const { push } = useRouter()
 
@@ -68,7 +66,7 @@ const Header = () => {
         <div className={styles.header}>
             <div className={styles.sectionDiv}>
                 <section className={styles.firstSection}>
-                    <img id="gg" src="./static/web/f.png"/>
+                    <img ref={ref} src="./static/web/f.png"/>
                     <div onClick={() => push("/#projects")} className={styles.book}>
                         <div className={styles.cover}></div>
                         <h2>Port- <span>folio</span></h2>
