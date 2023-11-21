@@ -56,7 +56,7 @@ const Header = () => {
     //     }
     // }, [])
 
-    if (typeof window !== undefined) {
+    if (typeof document !== undefined) {
         parallaxEffect()
     }
 
