@@ -15,12 +15,14 @@ const parallaxEffect = () => {
     const setMouseParallaxStyle = () => {
         if (window.innerWidth > 1000) {
             if (scrollY <= 800) {
+                console.log("ulala")
                 const distX = coordXprocent - positionX
                 const distY = coordYprocent - positionY
 
                 positionX = positionX + (distX * speed)
                 positionY = positionY + (distY * speed)
 
+                console.log(img)
                 img.style.cssText = `transform: translate(${positionX / particles}%, ${positionY / particles}%);`
             }
         }
@@ -30,11 +32,8 @@ const parallaxEffect = () => {
     setMouseParallaxStyle()
 
     window.addEventListener("mousemove", function (e) {
-        console.log("ulala")
         if (window.innerWidth > 1000) {
-            console.log("ohoho")
             if (window.scrollY <= 800) {
-                console.log("ahahhaha")
                 const parallaxWidth = img.offsetWidth
                 const parallaxHeight = img.offsetHeight
 
