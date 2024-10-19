@@ -17,7 +17,7 @@ const mainAnimLogic = () => {
                     animItemPoint = window.innerHeight - window.innerHeight / animStart
                 }
 
-                if ((pageYOffset + 100 > animItemoffset - animItemPoint) && pageYOffset < (animItemoffset + animItemHeight)) {
+                if ((pageYOffset - 150 > animItemoffset - animItemPoint) && pageYOffset + 150 < (animItemoffset + animItemHeight)) {
                     animItem.classList.add(styles["_active" + index])
                 } else {
                     animItem.classList.remove(styles["_active" + index])
