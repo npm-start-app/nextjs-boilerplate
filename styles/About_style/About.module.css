@@ -24,8 +24,6 @@
     letter-spacing: 3px;
 
     transform: translate(0, 20px);
-    opacity: 0;
-    transition: none;
 }
 
 .specialize {
@@ -37,8 +35,6 @@
     letter-spacing: 2px;
 
     transform: translate(0, 20px);
-    opacity: 0;
-    transition: none;
 }
 
 .ImgName img {
@@ -53,40 +49,35 @@
     letter-spacing: 2px;
 
     transform: translate(0, 20px);
-    opacity: 0;
-    transition: none;
 }
 
 .avatar{
     transform: translate(0, 20px);
-    opacity: 0;
     width: 150px;
     height: 150px;
-    transition: none;
+}
+
+._anim{
+    transition: 0.8s;
+    opacity: 0;
 }
 
 ._active0 {
     transform: translate(0, 0);
-    transition: 0.8s;
     opacity: 1;
 }
 ._active1 {
-    transition: 0.8s;
     transform: translate(0, 0);
     opacity: 1;
 }
 ._active2 {
-    transition: 0.8s;
     transform: translate(0, 0);
     opacity: 1;
 }
 ._active3 {
-    transition: 0.8s;
     transform: translate(0, 0);
     opacity: 1;
 }
-
-._anim{}
 
 @media screen and (max-width: 1400px) {
     .text{
