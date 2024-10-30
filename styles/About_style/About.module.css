@@ -65,18 +65,22 @@
 ._active0 {
     transform: translate(0, 0);
     opacity: 1;
+    transition: 1s;
 }
 ._active1 {
     transform: translate(0, 0);
     opacity: 1;
+    transition: 1s;
 }
 ._active2 {
     transform: translate(0, 0);
     opacity: 1;
+    transition: 1s;
 }
 ._active3 {
     transform: translate(0, 0);
     opacity: 1;
+    transition: 1s;
 }
 
 @media screen and (max-width: 1400px) {

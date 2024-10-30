@@ -82,6 +82,7 @@
     transition: 0.5s;
     cursor: pointer;
     margin-left: 25px;
+    border-radius: 15px;
 }
 
 .book:hover {
@@ -99,6 +100,7 @@
     left: 0;
     transform: skewY(-45deg) translate(-30px, -15px);
     box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .book::after {
@@ -157,6 +159,7 @@
     height: 72%;
     background: url('../../static/web/bg3.jpg');
     background-size: cover;
+    border-radius: 0 50% 0 0;
 }
 
 @media screen and (max-width: 1200px) {
