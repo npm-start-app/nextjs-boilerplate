@@ -115,7 +115,7 @@ const Projects = () => {
             <div className={`${styles.project} ${styles.project0}`} style={{ height: '500px' }}>
                 <div className={styles.project0_text}>
                     <div className={styles.project0_text_0}>afafja<span className='dataBase_span_0' style={{ color: '#ffc200', fontSize: '20px' }}>D</span>lfoafopajfokajfmaopfw;kqpokrfoqjopjwfp<span className='dataBase_span_1' style={{ color: '#ffc200', fontSize: '20px' }}>a</span>;kl[]</div>
-                    <div className={styles.project0_text_1}>pw<span className='dataBase_span_2' style={{ color: '#ffc200', fontSize: '20px' }}>t</span>3opo-0kfwek-0wel3[fakmwkomwss'<span className='dataBase_span_3' style={{ color: '#ffc200', fontSize: '20px' }}>a</span>555afajfoif32omoo</div>
+                    <div className={styles.project0_text_1}>pw<span className='dataBase_span_2' style={{ color: '#ffc200', fontSize: '20px' }}>t</span>3opo-0kfwek-0wel3[fakmwkomwssL<span className='dataBase_span_3' style={{ color: '#ffc200', fontSize: '20px' }}>a</span>555afajfoif32omoo</div>
                     <div className={styles.project0_text_2}>900-90-9<span className='dataBase_span_4' style={{ color: '#ffc200', fontSize: '20px' }}>B</span>-9))_(JOFAFANJOQMAKSN<span className='dataBase_span_5' style={{ color: '#ffc200', fontSize: '20px' }}>a</span>oihsdvbwjkenjiosjvdk</div>
                     <div className={styles.project0_text_3}>46578654..z.c,<span className='dataBase_span_6' style={{ color: '#ffc200', fontSize: '20px' }}>s</span>;lq4w4qa5s7cal;qascqw\q<span className='dataBase_span_7' style={{ color: '#ffc200', fontSize: '20px' }}>e</span>7clal;c,as;s</div>
                 </div>
