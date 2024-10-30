@@ -138,15 +138,20 @@ const NavBarElement = ({ index, image, scrollYParam }: NBE) => {
     return (
         <div id={`main_${index}`} className={styles.main}>
             <div id={`Mp_${index}`} className={styles.submain}>
-                <div onClick={() => { if (ind.current === 1) { push("/#about") } else { push("/#projects") } }}>
+                <div onClick={() => { if (ind.current === 1) { push("/#main_1") } else { push("/#main_2") } }}>
                     <img id={`p_${index}`} className={`${styles.p} ${styles._p}`} src={image} />
                 </div>
                 <div>
                     <img id={`p1_${index}`} className={`${styles.p1} ${styles._p1}`} src="./static/web/p1.png" />
                 </div>
             </div>
-            <div onClick={() => { if (ind.current === 1) { push("/#about") } else { push("/#projects") } }} className={styles.submain1}>
-                <div className={styles.mbg}>{index}</div>
+            <div className={styles.submain1}>
+                <div onClick={() => { if (ind.current === 1) { push("/#main_1") } else { push("/#main_2") } }}>
+                    <img className={`${styles.p} ${styles._p}`} src={image} />
+                </div>
+                <div>
+                    <img className={`${styles.p1} ${styles._p1}`} src="./static/web/p1.png" />
+                </div>
             </div>
         </div>
     )
